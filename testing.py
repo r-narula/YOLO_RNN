@@ -6,26 +6,25 @@ import os
 import os
 
 number_images = 1344
-df = pd.read_csv("grids.csv")
-df_2 = pd.read_csv("grids_final.csv")
-number = int(np.ceil(224/19))
+df = pd.read_csv("grids_7.csv")
+df_2 = pd.read_csv("grids_final_7.csv")
+number = int(np.ceil(224/7))
 
 list_object = []
 for i in range(len(df)):
-    x = (i,df["image_number"][i],(int(np.floor(df["y_center"][i])),int(np.floor(df["x_center"][i]))))
+    x = (i,df["image_number"][i],(int(np.floor(df["y_center"][i])),int(np.floor(df["x_center"][i])))) # which row and column does the object is in
     list_object.append(x)
 # print(list_object)
 
 
 list_columns = list(df.columns)
-array =  np.zeros((1344,19,19,8))
+array =  np.zeros((1344,7,7,8))
 
 images_that_have_objects = []
 for i in range(len(df)):
     if df["x_center"][i] !=0 and df["y_center"][i] != 0:
         if df["image_number"][i] not in images_that_have_objects:
             images_that_have_objects.append(df["image_number"][i])
-# print(images_that_have_objects)
 
 def contains_object(image_number):
     number_objects = 0
@@ -35,7 +34,6 @@ def contains_object(image_number):
             number_objects += 1
             data_object.append(i)
     return data_object,number_objects
-
 
 # os.mkdir("y_train_visualize")
 for image in range(number_images):
