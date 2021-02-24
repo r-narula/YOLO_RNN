@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_1</folder>
+	<filename>frame1273.jpg</filename>
+	<path>/home/mononoke/labelling/data/data_1/frame1273.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>chair</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>364</xmin>
+			<ymin>98</ymin>
+			<xmax>729</xmax>
+			<ymax>598</ymax>
+		</bndbox>
+	</object>
+</annotation>
