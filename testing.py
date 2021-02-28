@@ -6,8 +6,8 @@ import os
 import os
 
 number_images = 1344
-df = pd.read_csv("grids_7.csv")
-df_2 = pd.read_csv("grids_final_7.csv")
+df = pd.read_csv("grids_16.csv")
+df_2 = pd.read_csv("grids_final_16.csv")
 number = int(np.ceil(224/7))
 
 list_object = []
@@ -18,7 +18,7 @@ for i in range(len(df)):
 
 
 list_columns = list(df.columns)
-array =  np.zeros((1344,7,7,8))
+array =  np.zeros((1344,16,16,8))
 
 images_that_have_objects = []
 for i in range(len(df)):
@@ -55,5 +55,5 @@ for image in range(number_images):
     # f.write(content)
     # f.close()
 np.set_printoptions(threshold=np.inf)
-# np.save("/home/mononoke/Desktop/data/numpy_arrays/y_train.npy",array)
+np.save("/home/mononoke/Desktop/data/numpy_arrays/y_train_16.npy",array)
 # print(array.shape)
